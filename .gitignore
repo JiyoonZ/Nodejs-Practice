@@ -1,0 +1,5 @@
+node_modules/
+./practice/node_modules/
+./practice/.env
+./express/myapp/bin/
+./express/myapp/node_modules/
