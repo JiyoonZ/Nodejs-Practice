@@ -1,0 +1,11 @@
+ dotenv 설치 => 환경변수 저장하기 (포트번호, db 이름과 비번 등...)
+
+ sudo npm i mongoose ejs : mongoose와 ejs 설치하기
+
+ views 폴더 생성 > index.ejs 파일 만들기
+
+ router 폴더 생성
+  > userRouter.js생성 => express router 사용
+
+ models 폴더 생성
+  > users.js생성 => 스키마 생성 

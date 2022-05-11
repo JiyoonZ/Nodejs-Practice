@@ -9,11 +9,16 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 //간단실습
 const testRouter = require('./routes/call');
-
+// 간단 실습예제2
+const postRouter = require('./routes/post');
+const dbconnect = require('./models/index');
+dbconnect();
 var app = express();
 
 // view engine setup
+// views 들이 담겨져 있는 경로를 지정 
 app.set('views', path.join(__dirname, 'views'));
+// view 엔진이 읽는 대상은 ejs 로 하겠다.
 app.set('view engine', 'ejs');
 
 app.use(logger('dev'));
@@ -24,7 +29,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+// 실습예제1
 app.use('/test', testRouter);
+// 실습예제2
+app.use('/expost',postRouter)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
