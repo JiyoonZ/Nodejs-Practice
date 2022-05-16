@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>Zeeyoon's Blog</h1>
+  <br><br>
+  <a href="/blog/write">글쓰기</a>
+  <br>
+  <hr>
+  <!-- 글제목 -->
+  <h2>blog List</h2>
+  <ol>
+  <% for(let i=0; i<content.length; i++) { %>
+    <lie><a href=""><%= content[i].title%></a></lie>
+    <br><br>
+  <% } %>
+  </ol>
+</body>
+</html>
+
+<!-- 글의 제목이 뜨고 제목을 클릭했을때 => 본문내용으로 이동. -->

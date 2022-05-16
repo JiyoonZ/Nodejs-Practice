@@ -3,6 +3,7 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+const cors = require('cors');
 
 var indexRouter = require('./routes/index');
 //주소를 찾는 것을 routing
@@ -14,6 +15,9 @@ const postRouter = require('./routes/post');
 const dbconnect = require('./models/index');
 dbconnect();
 var app = express();
+// 블로그 예제
+const blogRouter = require('./routes/blog');
+
 
 // view engine setup
 // views 들이 담겨져 있는 경로를 지정 
@@ -27,12 +31,20 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+// CORS 에러처리 
+app.use(cors({
+  origin: '*',
+  methods: ['GET', 'POST', 'DELETE', 'UPDATE', 'PUT', 'PATCH']
+}))
+
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 // 실습예제1
 app.use('/test', testRouter);
 // 실습예제2
 app.use('/expost',postRouter)
+// 블로그 예제
+app.use('/blog', blogRouter)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

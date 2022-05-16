@@ -1,9 +1,10 @@
 //환경변수..
 require('dotenv').config();
+const { MONGO_URI, PORT} = process.env;
+
 const express = require('express');
 const mongoose = require('mongoose');
 const app = express();
-const { MONGO_URI, PORT} = process.env;
 const userRouter = require('./router/userRouter');
 const User = require("./models/users");
 
@@ -21,6 +22,8 @@ app.use("/user", userRouter);
 
 app.set("view engine", "ejs");
 app.set("views", __dirname + "/views");
+
+//기본적으로 우리사이트에 접속했을떄
 app.get("", (req, res)=> {
   // user 모델 사용
   User.find({}, (err, users) => {
