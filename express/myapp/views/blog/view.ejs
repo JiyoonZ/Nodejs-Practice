@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>상세보기</h1>
+  <hr>
+  <h2><%= content.title %></h2>
+  <p><%= content.content %></p>
+  <p><%= content.timestamps %></p>
+  <button id="list">목록으로</button>
+  <br><br><hr>
+  <button id="update" data-doc="<%=content.no%>">수정하기</button>
+  <button id="delete" data-doc="<%=content.no%>">삭제하기</button>
+  <script src="/javascripts/list.js"></script>
+</body>
+</html>
