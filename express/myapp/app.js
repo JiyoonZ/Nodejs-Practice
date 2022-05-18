@@ -7,7 +7,7 @@ const cors = require('cors');
 
 var indexRouter = require('./routes/index');
 //주소를 찾는 것을 routing
-var usersRouter = require('./routes/users');
+var usersRouter = require('./routes/newusers');
 //간단실습
 const testRouter = require('./routes/call');
 // 간단 실습예제2
